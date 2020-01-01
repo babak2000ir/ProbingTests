@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicDLL", "DynamicDLL\Dy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyLoader", "AssemblyLoader\AssemblyLoader.csproj", "{12FB0F75-6CDD-4A32-8B20-0B3BB4675FC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicDLL2", "DynamicDLL2\DynamicDLL2.csproj", "{49320BB7-AB6C-45BA-BB1E-8D9542CE2E7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensibility", "Extensibility\Extensibility.csproj", "{E20C5B3F-FF3B-405D-B8D8-952133EE7CC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{12FB0F75-6CDD-4A32-8B20-0B3BB4675FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12FB0F75-6CDD-4A32-8B20-0B3BB4675FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12FB0F75-6CDD-4A32-8B20-0B3BB4675FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49320BB7-AB6C-45BA-BB1E-8D9542CE2E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49320BB7-AB6C-45BA-BB1E-8D9542CE2E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49320BB7-AB6C-45BA-BB1E-8D9542CE2E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49320BB7-AB6C-45BA-BB1E-8D9542CE2E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E20C5B3F-FF3B-405D-B8D8-952133EE7CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E20C5B3F-FF3B-405D-B8D8-952133EE7CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E20C5B3F-FF3B-405D-B8D8-952133EE7CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E20C5B3F-FF3B-405D-B8D8-952133EE7CC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
