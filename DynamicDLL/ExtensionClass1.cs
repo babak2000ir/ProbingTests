@@ -16,7 +16,7 @@ namespace DynamicDLL
         {
             PersianCalendar pc = new PersianCalendar();
 
-            return pc.GetDayOfMonth(DateTime.Now) + "//" + pc.GetMonth(DateTime.Now) + "//" + pc.GetYear(DateTime.Now) + " of " + pc.GetEra(DateTime.Now);
+            return pc.GetDayOfMonth(DateTime.Now) + "/" + pc.GetMonth(DateTime.Now) + "/" + pc.GetYear(DateTime.Now);
         }
 
         public string GetName()

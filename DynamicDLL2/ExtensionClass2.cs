@@ -15,7 +15,7 @@ namespace DynamicDLL2
         public string GetDateTime()
         {
             JapaneseCalendar jc = new JapaneseCalendar();
-            return jc.GetDayOfMonth(DateTime.Now) + "//" + jc.GetMonth(DateTime.Now) + "//" + jc.GetYear(DateTime.Now) + " of " + jc.GetEra(DateTime.Now);
+            return jc.GetDayOfMonth(DateTime.Now) + "/" + jc.GetMonth(DateTime.Now) + "/" + jc.GetYear(DateTime.Now);
         }
 
         public string GetName()
