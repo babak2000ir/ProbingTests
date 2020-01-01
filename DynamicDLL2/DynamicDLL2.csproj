@@ -45,10 +45,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Extensibility\Extensibility.csproj">
-      <Project>{e20c5b3f-ff3b-405d-b8d8-952133ee7cc7}</Project>
-      <Name>Extensibility</Name>
+    <ProjectReference Include="..\ExtensibilityLibrary\ExtensibilityLibrary.csproj">
+      <Project>{0c8ecc58-25f4-4d4f-a6a7-0209ccf18fe7}</Project>
+      <Name>ExtensibilityLibrary</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y $(ProjectDir)$(OutDir)*.dll $(SolutionDir)AssemblyLoader\Extensions
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

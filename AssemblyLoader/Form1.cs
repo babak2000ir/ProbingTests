@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExtensibilityLibrary;
 
 namespace AssemblyLoader
 {
@@ -35,35 +36,13 @@ namespace AssemblyLoader
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			string[] DllFiles = Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Extensions"),"*.dll",SearchOption.AllDirectories);
-			//Assembly a = Assembly.Load("DynamicDLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
-			foreach (string DllFile in DllFiles)
+			string ExtensionsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Extensions");
+			ExtensionLoader el = new ExtensionLoader(ExtensionsPath);
+
+			foreach (Type ExtType in el.Extensions)
 			{
-				Assembly a = Assembly.LoadFile(DllFile);
-				//string result1 = (string)a.GetTypes()[0].GetMethod("GetClassInfo").Invoke(null, null);
-				//string result2 = (string)a.GetTypes()[1].GetMethod("GetClassInfo").Invoke(null, null);
-
-				foreach (Type objType in a.GetTypes())
-				{
-					TypeInfo SubType = objType.UnderlyingSystemType as TypeInfo;
-					if (SubType != null && SubType.ImplementedInterfaces.Any())
-					{
-						Type InterfaceType = SubType.ImplementedInterfaces.First();
-						if (InterfaceType.Name == typeof(IMyExtension).Name)
-						{
-							IMyExtension MyExt = Activator.CreateInstance(objType) as IMyExtension;
-							if (MyExt != null)
-							{
-								MessageBox.Show(MyExt.GetName() + " " + MyExt.GetDateTime());
-							}
-						}
-					}
-
-					//MessageBox.Show(obj.GetType().ToString());
-					//MyExt = obj as IMyExtension;
-
-
-				}
+				IMyExtension MyExt = el.GetExtensionInstance(ExtType);
+				MessageBox.Show(MyExt.GetName() + " " + MyExt.GetDateTime());
 			}
 		}
 	}
